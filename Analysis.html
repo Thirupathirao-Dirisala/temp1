@@ -9,12 +9,12 @@
 <body>
 
 
-    <div id="out1"></div>
+    <div id="lineplot"></div>
     <py-config>
         packages = ["pandas","matplotlib"]
     </py-config>
 
-    <py-script>
+    <py-script output="lineplot">
         import pandas as pd
         import js
         import matplotlib.pyplot as plt
@@ -22,39 +22,25 @@
         from pyodide.http import open_url
         url = 'https://raw.githubusercontent.com/Boddudinesh/automation/main/SEM-3.2.csv'
         df = pd.read_csv(open_url(url))
-
-    </py-script>
-    <div id="parent" >
-      <div id="t1">
-        <py-script>
-          display(r)
-        </py-script>
-      </div>
-
-      <div id="t2">
-        <py-script output="out1">
-          x=df.loc[df["REDG NO"] == r]
-          d = x.to_dict(orient='records')
-          l1 = list(d[0].keys())[4:]
-          l2 = list(d[0].values())[4:]
-          fig, ax = plt.subplots()
-          l3=[]
-          for i in l2:
-              l3.append(int(i.split()[0]))
-          bars=plt.bar(l1 , l3)
-          for bar in bars:
-              yval = bar.get_height()
-              plt.text(bar.get_x() + bar.get_width()/2, yval, round(yval, 2), ha='center', va='bottom')
-          display(l1)
-          display(l2)
+        x=df.loc[df["REDG NO"] == r]
+        d = x.to_dict(orient='records')
+        l1 = list(d[0].keys())[4:]
+        l2 = list(d[0].values())[4:]
+        fig, ax = plt.subplots()
+        l3=[]
+        for i in l2:
+            l3.append(int(i.split()[0]))
+        bars=plt.bar(l1 , l3)
+        for bar in bars:
+            yval = bar.get_height()
+            plt.text(bar.get_x() + bar.get_width()/2, yval, round(yval, 2), ha='center', va='bottom')
+        display(l1)
+        display(l2)
             
           fig
 
         </py-script>
           
-      </div>
-
-    </div>
 
 
 
