@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      function submitValue() {
+        // Get the value entered by the user
+        var input = document.getElementById('value-input');
+        var value = input.value;
+
+        // Store the value in localStorage
+        localStorage.setItem('myValue', value);
+
+        // Redirect to the second page
+        window.location.href = 'Analysis.html';
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Page 1</h1>
+    <p>Enter a value:</p>
+    <input type="text" id="value-input">
+    <button onclick="submitValue()">Submit</button>
+  </body>
+</html>
