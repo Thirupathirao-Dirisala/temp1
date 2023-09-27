@@ -33,7 +33,16 @@
         <py-script>
           x=df.loc[df["REDG NO"] == r]
           d = x.to_dict(orient='records')
-          display(d)
+          l1 = list(d[0].keys())[4:]
+          l2 = list(d[0].values())[4:]
+          l3=[]
+          for i in l2:
+              l3.append(int(i.split()[0]))
+          bars=plt.bar(l1 , l3)
+          for bar in bars:
+              yval = bar.get_height()
+              plt.text(bar.get_x() + bar.get_width()/2, yval, round(yval, 2), ha='center', va='bottom')
+          plt.show()
 
         </py-script>
       </div>
