@@ -35,6 +35,7 @@
           d = x.to_dict(orient='records')
           l1 = list(d[0].keys())[4:]
           l2 = list(d[0].values())[4:]
+          fig, ax = plt.subplots()
           l3=[]
           for i in l2:
               l3.append(int(i.split()[0]))
@@ -45,7 +46,7 @@
           display(l1)
           display(l2)
             
-          bars
+          fig
 
         </py-script>
       </div>
