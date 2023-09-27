@@ -14,6 +14,10 @@ l2 = list(d[0].values())[4:]
 l3=[]
 for i in l2:
     l3.append(int(i.split()[0]))
-fig,ax=plt.bar(l1 , l3)
+fig, ax = plt.subplots()  # Use subplots to create a figure and axis
 
+ax.bar(l1, l3)
+
+# Display the figure
+plt.show()
 fig
