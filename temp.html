@@ -17,7 +17,6 @@ html>
     <py-script> print("My Lineplot")</py-script>
     <div id="lineplot"></div>
     <py-script output="lineplot">
-# Python Code Goes Here ...
 import matplotlib.pyplot as plt
 
 fig, ax = plt.subplots()
@@ -35,7 +34,7 @@ plt.xlabel('Year')
 plt.ylabel('Population (M)')
 plt.title('Year vs Population')
 plt.legend(loc='lower right')
-
+plt.show()
 fig
     </py-script>
 </body>
