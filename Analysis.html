@@ -7,6 +7,7 @@
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
 </head>
 <body>
+<div id="out1"></div>
 <py-tutor>
     <py-config>
         packages = ["pandas","matplotlib"]
@@ -30,7 +31,7 @@
       </div>
 
       <div id="t2">
-        <py-script output="out">
+        <py-script output="out1">
           x=df.loc[df["REDG NO"] == r]
           d = x.to_dict(orient='records')
           l1 = list(d[0].keys())[4:]
@@ -49,7 +50,7 @@
           fig
 
         </py-script>
-          <div id="out"></div>
+          
       </div>
 
     </div>
