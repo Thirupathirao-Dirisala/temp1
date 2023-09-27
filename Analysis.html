@@ -30,7 +30,7 @@
       </div>
 
       <div id="t2">
-        <py-script>
+        <py-script output="out">
           x=df.loc[df["REDG NO"] == r]
           d = x.to_dict(orient='records')
           l1 = list(d[0].keys())[4:]
@@ -49,6 +49,7 @@
           fig
 
         </py-script>
+          <div id="out"></div>
       </div>
 
     </div>
