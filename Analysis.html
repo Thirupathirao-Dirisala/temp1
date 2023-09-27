@@ -34,9 +34,10 @@
         for bar in bars:
             yval = bar.get_height()
             plt.text(bar.get_x() + bar.get_width()/2, yval, round(yval, 2), ha='center', va='bottom')
-        display(l1)
-        display(l2)
-            
+        plt.xlabel('Year')
+        plt.ylabel('Population (M)')
+        plt.title('Year vs Population')
+        plt.legend(loc='lower right')
         fig
 
     </py-script>
